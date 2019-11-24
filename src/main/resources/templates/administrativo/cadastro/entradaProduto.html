@@ -7,13 +7,13 @@
 			<!-- Container fluid  -->
 			<!-- ============================================================== -->
 			<div class="container-fluid" layout:fragment="corpo">
-				<div class="col-sm-6">
+				<div class="col-md-12">
 					<div class="card align-center">
-						<form class="form-horizontal " th:object="${entradaProduto}"
+						<form class="form-horizontal " th:object="${entrada}"
 							th:action="@{/administrativo/salvarEntradaProduto}" method="POST">
 
 							<div class="card-body text-center">
-								<h4 class="card-title">Cadastro de Entrada Produto</h4>
+								<h4 class="card-title">Cadastro de EntradaProduto</h4>
 
 								<div class="form-group row">
 									<div class="alert alert-danger"
@@ -29,6 +29,9 @@
 											th:field="*{id}" readOlny="readonly" placeholder="id">
 									</div>
 								</div>
+										
+							
+							
 								<div class="form-group row">
 									<label for="lname"
 										class="col-sm-3 text-right control-label col-form-label">Funcionário</label>
@@ -42,38 +45,41 @@
 								</div>
 								<div class="form-group row">
 									<label for="lname"
-										class="col-sm-3 text-right control-label col-form-label">Data da entrada</label>
+										class="col-sm-3 text-right control-label col-form-label">Observação
+										</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="lname"
+											th:field="*{observacao}" placeholder="Anote alguma observação">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="lname"
+										class="col-sm-3 text-right control-label col-form-label">Fornecedor
+										</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="lname"
+											th:field="*{fornecedor}" placeholder="Informe o fornecedor">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="lname"
+										class="col-sm-3 text-right control-label col-form-label">Data da compra
+										</label>
 									<div class="col-sm-9">
 										<input type="date" class="form-control" id="lname"
-											th:field="*{dataEntrada}" placeholder="Informe a data"
+											th:field="*{dataEntrada}" placeholder="Data da compra"
 											>
 									</div>
 								</div>
-									<div class="form-group row">
-									<label for="lname"
-										class="col-sm-3 text-right control-label col-form-label">Observação</label>
-									<div class="col-sm-9">
-										<input type="text" class="form-control" id="lname"
-											th:field="*{observacao}" placeholder="Informe a categoria"
-											maxlength="150">
-									</div>
-								</div>
-									<div class="form-group row">
-									<label for="lname"
-										class="col-sm-3 text-right control-label col-form-label">Fornecedor</label>
-									<div class="col-sm-9">
-										<input type="text" class="form-control" id="lname"
-											th:field="*{fornecedor}" placeholder="Informe o fornecedor"
-											maxlength="150">
-									</div>
-								</div>
-									<hr/>
-									<div class="form-horizontal form-row col-12" th:object="${entradaItens}">
+								
+								<hr/>
+								<div class="form-row col-md-12" th:object="${entradaItens}">
+							<div class="card text-center">
 									
-									<div class="form-horizontal form-row col-12">
+								<div class="form-group row">
 									<label for="lname"
-										class="col-sm-3 text-right control-label col-form-label">Produto</label>
-									<div class="col-sm-9">
+										class=" text-right control-label col-form-label">Produto</label>
+									<div class="col-md-8">
 										<select th:field="*{produto}"
 									class="form-control">
 									<option th:each="p: ${listaProdutos}"
@@ -82,54 +88,55 @@
 									</div>
 								</div>
 								
-								<div class="form-horizontal form-row col-12">
+								<div class="form-group row col-12">
+								<div class="form-group row col-md-3">
 									<label for="lname"
-										class="col-sm-3 text-right control-label col-form-label">Quantidade</label>
-									<div class="col-sm-9">
+										class=" text-right control-label col-form-label">Quantidade
+										</label>
+									<div class="">
 										<input type="number" class="form-control" id="lname"
-											th:field="*{quantidade}" placeholder="Informe a quantidade"
-											>
+											th:field="*{quantidade}">
 									</div>
 								</div>
 								
-								<div class="form-horizontal form-row col-12">
+								<div class="form-group row col-md-3">
 									<label for="lname"
-										class="col-sm-3 text-right control-label col-form-label">Valor do produto</label>
-									<div class="col-sm-9">
+										class=" text-right control-label col-form-label">Valor do Produto
+										</label>
+									<div >
 										<input type="number" class="form-control" id="lname"
-											th:field="*{valorProduto}" placeholder="Informe o preço do produto"
-											>
-									</div>
-									<div class="form-horizontal form-row col-12">
-									<label for="lname"
-										class="col-sm-3 text-right control-label col-form-label">Valor da venda</label>
-									<div class="col-sm-9">
-										<input type="number" class="form-control" id="lname"
-											th:field="*{valorVenda}" placeholder="Informe o preço da venda"
-											>
+											th:field="*{ValorProduto}">
 									</div>
 								</div>
+								
+								<div class="form-group row col-md-3">
+									<label for="lname"
+										class=" text-right control-label col-form-label">Valor da Venda
+										</label>
+									<div >
+										<input type="number" class="form-control" id="lname"
+											th:field="*{valorVenda}" >
+									</div>
 								</div>
-								<div class="form-group row col-md-2">
-						<!-- 					<label for="add">Ação</label>  -->
-						<br />
-						<div class="text-center ">
-						<button id="add" name="acao"  th:value="itens" type="submit"
-							class="btn   btn-primary">Add Item</button>
-							
+								
+								<div class="bnt form-horizontal col-sm-3">
+								<button id="add" name="acao" th:value="itens" type="submit"
+								class="btn btn-primary bnt-sm">Add Item</button>
+								
+								</div>
+</div>
+</div>
 							</div>
-					</div>
-								
-									</div>
-									<div class="col-12">
-
-		<div class="card">
+							
+							<div class="card">
 			<div class="card-body" >
-				<h5 class="card-title text-center">Lista de Produtos</h5>
+				<h5 class="card-title text-center">Lista de Itens</h5>
 				<div class="table-responsive">
-					<div id="zero_config_wrapper"
-						class="dataTables_wrapper container-fluid dt-bootstrap4">
-						
+				
+						<div class="row">
+							<div class="col-sm-12 col-md-6"></div>
+							<div class="col-sm-12 col-md-6"></div>
+						</div>
 						<div class="row">
 							<div class="col-sm-12">
 								<table id="zero_config"
@@ -137,79 +144,77 @@
 									role="grid" aria-describedby="zero_config_info">
 									<thead>
 										<tr role="row">
-											<th class="sorting_asc" tabindex="0"
-												aria-controls="zero_config" rowspan="1" colspan="1"
-												style="width: 143.433px;" aria-sort="ascending"
-												aria-label="Name: activate to sort column descending">#</th>
+											
 											<th class="sorting" tabindex="0" aria-controls="zero_config"
 												rowspan="1" colspan="1" style="width: 232.267px;"
-												aria-label="Position: activate to sort column ascending">Nome</th>
-											<th class="sorting" tabindex="0" aria-controls="zero_config"
-												rowspan="1" colspan="1" style="width: 103.75px;"
-												aria-label="Office: activate to sort column ascending">Quantidade</th>
+												aria-label="Position: activate to sort column ascending">Produto</th>
 												<th class="sorting" tabindex="0" aria-controls="zero_config"
-												rowspan="1" colspan="1" style="width: 103.75px;"
-												aria-label="Office: activate to sort column ascending">Valor do Produto</th>
+												rowspan="1" colspan="1" style="width: 232.267px;"
+												aria-label="Position: activate to sort column ascending">Quantidade</th>
 												<th class="sorting" tabindex="0" aria-controls="zero_config"
-												rowspan="1" colspan="1" style="width: 103.75px;"
-												aria-label="Office: activate to sort column ascending">Valor de Venda</th>
-												
+												rowspan="1" colspan="1" style="width: 232.267px;"
+												aria-label="Position: activate to sort column ascending">Valor do produto</th>
+												<th class="sorting" tabindex="0" aria-controls="zero_config"
+												rowspan="1" colspan="1" style="width: 232.267px;"
+												aria-label="Position: activate to sort column ascending">Valor da Venda</th>
+											
+											
 										</tr>
 
 
 									</thead>
 									<tbody>
-										<tr th:each="item : ${listaEntradaItens}">
-											<td th:text="$item.id}"></td>
+										<tr th:each="item: ${listaEntradaItens}">
+										
 											<td th:text="${item.produto.nome}"></td>
 											<td th:text="${item.quantidade}"></td>
-											<td th:text="${item.valorProduto}"></td>
-											<td th:text="${item.valorVenda}"></td>
+											<td th:text="${item.ValorProduto}"></td>
+											<td th:text="${item.ValorVenda}"></td>		
+											
 										
 										</tr>
 									</tbody>
-						
+									<tfoot>
+
+									</tfoot>
 								</table>
 							</div>
 						</div>
-					
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-
-	</div>
-									
-									
-									
-								</div>
-</form>
+							
+							</div>
+							</div>
 							</div>
 							<div class="card">
-<div class="text-center">
-									<div class="card-footer ">
-										<button name="acao"  type="submit" class="btn btn-success btn-lg">Finalizar</button>
-									<a th:href="@{/administrativo/addProduto}"
+
+								<div class="border-top"></div>
+							</div>
+							<div class="card"></div>
+							<div class="text-center">
+								<div class="card-body ">
+									<button name="acao" th:value="salvar" type="submit" class="btn btn-success btn-lg">Finalizar</button>
+									<a th:href="@{/administrativo}"
 										class="btn btn-lg btn-danger">Cancelar</a>
 
 								</div>
-								
 							</div>
-										
-									<div class="border-top"></div>
-								</div>
-									
+							
+							
+							
+							
+												</form>
 							
 					</div>
 
 
 				</div>
 
+			</div>
+
+
 		<!-- ============================================================== -->
 		<!-- End Container fluid  -->
 		<!-- ============================================================== -->
+	
 
 </body>
 </html>

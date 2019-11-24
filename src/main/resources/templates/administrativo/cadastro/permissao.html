@@ -35,7 +35,7 @@
 									<div class="col-sm-9">
 										<select th:field="*{funcionario}"
 									class="form-control">
-									<option th:each="f: ${funcionarios}"
+									<option th:each="f: ${listaFuncionarios}"
 										th:value="${f.id}" th:text="${f.nome}"></option>
 								</select>
 									</div>
@@ -47,7 +47,7 @@
 									<div class="col-sm-9">
 										<select th:field="*{papel}"
 									class="form-control">
-									<option th:each="p: ${papeis}"
+									<option th:each="p: ${listaPapeis}"
 										th:value="${p.id}" th:text="${p.nome}"></option>
 								</select>
 									</div>

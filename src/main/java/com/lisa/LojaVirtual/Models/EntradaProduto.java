@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="entradaProduto")
+@Table(name="entrada_produto")
 public class EntradaProduto {
 	
 	@Id
@@ -23,6 +23,8 @@ public class EntradaProduto {
 
 	@ManyToOne
 	private Funcionario funcionario;
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dataEntrada = new Date();
 	private String observacao;
 	private String fornecedor;

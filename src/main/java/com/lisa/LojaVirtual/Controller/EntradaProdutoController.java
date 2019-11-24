@@ -46,25 +46,7 @@ public class EntradaProdutoController {
 		return mv;
 	}
 
-//	@GetMapping("/administrativo/estados/listar")
-//	public ModelAndView listar() {
-//		ModelAndView mv=new ModelAndView("administrativo/estados/lista");
-//		mv.addObject("listaEstados", estadoRepositorio.findAll());
-//		return mv;
-//	}
 
-//	@GetMapping("/administrativo/estados/editar/{id}")
-//	public ModelAndView editar(@PathVariable("id") Long id) {
-//		Optional<Estado> estado = estadoRepositorio.findById(id);
-//		return cadastrar(estado.get());
-//	}
-
-//	@GetMapping("/administrativo/estados/remover/{id}")
-//	public ModelAndView remover(@PathVariable("id") Long id) {
-//		Optional<Estado> estado = estadoRepositorio.findById(id);
-//		estadoRepositorio.delete(estado.get());
-//		return listar();
-//	}
 
 	@PostMapping("/administrativo/salvarEntradaProduto")
 	public ModelAndView salvar(String acao, EntradaProduto entrada, EntradaItens entradaItens) {
