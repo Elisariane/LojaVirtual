@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{administrativo/fragments/layout}">
+<head>
+<meta charset="utf-8">
+    <title>Loja Virtual - ADM</title>
+</head>	
+			<!-- ============================================================== -->
+			<!-- Container fluid  -->
+			<!-- ============================================================== -->
+			<div class="container-fluid" layout:fragment="corpo">
+				<div class="col-12">
+
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title text-center">Lista de Permissão Fucionário</h5>
+							<div class="table-responsive">
+								<div id="zero_config_wrapper"
+									class="dataTables_wrapper container-fluid dt-bootstrap4">
+									<div id="zero_config_filter" class="col-sm-6">
+										<label>Pesquise<input type="submit" th:field="*{nome}"
+											class="form-control form-control-sm" placeholder=""
+											aria-controls="zero_config"></label>
+											<div class="btn-group pull-right">
+							   		<a  class="btn btn-sm btn-info" th:href="@{/administrativo/estado/busca}">Excluir</a>
+							   </div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12 col-md-6"></div>
+										<div class="col-sm-12 col-md-6"></div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<table id="zero_config"
+												class="table table-striped table-bordered dataTable"
+												role="grid" aria-describedby="zero_config_info">
+												<thead>
+													<tr role="row">
+														<th class="sorting_asc" tabindex="0"
+															aria-controls="zero_config" rowspan="1" colspan="1"
+															style="width: 143.433px;" aria-sort="ascending"
+															aria-label="Name: activate to sort column descending">#</th>
+														<th class="sorting" tabindex="0"
+															aria-controls="zero_config" rowspan="1" colspan="1"
+															style="width: 232.267px;"
+															aria-label="Position: activate to sort column ascending">Funcionário</th>
+														<th class="sorting" tabindex="0"
+															aria-controls="zero_config" rowspan="1" colspan="1"
+															style="width: 103.75px;"
+															aria-label="Office: activate to sort column ascending">Papel</th>
+															<th class="sorting" tabindex="0"
+															aria-controls="zero_config" rowspan="1" colspan="1"
+															style="width: 103.75px;"
+															aria-label="Office: activate to sort column ascending">Data da atribuição</th>
+															<th class="sorting" tabindex="0"
+															aria-controls="zero_config" rowspan="1" colspan="1"
+															style="width: 103.75px;"
+															aria-label="Office: activate to sort column ascending">Ação</th>
+													</tr>
+													
+												
+													
+												</thead>
+												<tbody>
+													<tr th:each="p : ${permissoes}">
+														<td th:text="${p.id}"></td>
+														<td th:text="${p.funcionario.nome}"></td>
+														<td th:text="${p.papel.nome}"></td>
+														<td th:text="${p.dataCadastro}"></td>
+														<td>
+															<div class="btn-group pull-right">
+																<a class="btn btn-md btn-primary"
+																	th:href="@{/administrativo/editarPermissao/{id}(id=${p.id})}"><i class=" fas fa-pencil-alt"></i></a>
+																
+																	
+																															
+																		
+															<a class="delete btn btn-md btn-danger" data-toggle="modal"
+													data-target="#modal-warning"
+													th:attr="data-target='#modal-warning'+${p.id}"> <span
+													class="oi oi-circle-x" title="Remover"  >
+														<i class="fas fa-trash-alt"></i>
+												</span></a>
+
+												<div class="modal modal-warning fade in"
+													th:id="modal-warning+${p.id}">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<button  type="button" class="close" data-dismiss="modal"
+																	aria-label="Close">
+																	<span aria-hidden="true" class="delete btn btn-md btn-danger pull-left">×</span>
+																</button>
+																
+															</div>
+															<div class="modal-body">
+																<h3>Deseja realmente remover essa permissão?</h3>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-outline pull-left"
+																	data-dismiss="modal">Fechar</button>
+																<a type="button" class="btn btn-outline"
+																	th:href="@{/administrativo/removerPermissao/{id}(id=${p.id})}"><i
+																	class="fa fa-check"></i>&nbsp;Sim</a>
+															</div>
+														</div>
+													</div>
+
+
+
+
+												</div>
+															
+																	
+																	
+															</div>
+														</td>
+													</tr>
+												</tbody>
+												<tfoot>
+
+												</tfoot>
+											</table>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-12 col-md-5">
+											<div class="dataTables_info" id="zero_config_info"
+												role="status" aria-live="polite"></div>
+										</div>
+										<div class="col-sm-12 col-md-7">
+											<div class="dataTables_paginate paging_simple_numbers"
+												id="zero_config_paginate">
+												<ul class="pagination">
+													<li class="paginate_button page-item previous disabled"
+														id="zero_config_previous"><a href="#"
+														aria-controls="zero_config" data-dt-idx="0" tabindex="0"
+														class="page-link">Antes</a></li>
+													<li class="paginate_button page-item active"><a
+														href="#" aria-controls="zero_config" data-dt-idx="1"
+														tabindex="0" class="page-link">1</a></li>
+													<li class="paginate_button page-item "><a href="#"
+														aria-controls="zero_config" data-dt-idx="2" tabindex="0"
+														class="page-link">2</a></li>
+													<li class="paginate_button page-item next"
+														id="zero_config_next"><a href="#"
+														aria-controls="zero_config" data-dt-idx="3" tabindex="0"
+														class="page-link">Próximo</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+				</div>
+
+			</div>
+		<!-- ============================================================== -->
+		<!-- End Container fluid  -->
+		<!-- ============================================================== -->
+	
+
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{administrativo/fragments/layout}">
+<head>
+<meta charset="utf-8">
+</head>
+			<!-- ============================================================== -->
+			<!-- Container fluid  -->
+			<!-- ============================================================== -->
+			<div class="container-fluid" layout:fragment="corpo">
+				<div class="col-sm-6">
+					<div class="card align-center">
+						<form class="form-horizontal " th:object="${cidade}"
+							th:action="@{/administrativo/salvarCidade}" method="POST">
+
+							<div class="card-body text-center">
+								<h4 class="card-title">Cadastro de Cidade</h4>
+
+								<div class="form-group row">
+									<div class="alert alert-danger"
+										th:if="${#fields.hasAnyErrors()}">
+										<div th:each="detailedError : ${#fields.detailedErrors()}">
+											<span th:text="${detailedError.message}"></span>
+										</div>
+									</div>
+									<label for="fname"
+										class="col-sm-3 text-right control-label col-form-label"></label>
+									<div class="col-sm-9">
+										<input type="hidden" class="form-control" id="id"
+											th:field="*{id}" readOlny="readonly" placeholder="id">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="lname"
+										class="col-sm-3 text-right control-label col-form-label">Nome
+										</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="lname"
+											th:field="*{nome}" placeholder="Informe o nome da cidade"
+											maxlength="50">
+									</div>
+								</div>
+							
+								<div class="form-group row">
+									<label for="lname"
+										class="col-sm-3 text-right control-label col-form-label">Estado</label>
+									<div class="col-sm-9">
+										<select th:field="*{estado}"
+									class="form-control">
+									<option th:each="est: ${estados}"
+										th:value="${est.id}" th:text="${est.nome}"></option>
+								</select>
+									</div>
+								</div>
+
+							</div>
+							<div class="card">
+
+								<div class="border-top"></div>
+							</div>
+							<div class="card"></div>
+							<div class="text-center">
+								<div class="card-body ">
+									<button  type="submit" class="btn btn-success btn-lg">Adicionar</button>
+									<a th:href="@{/administrativo/cidades}"
+										class="btn btn-lg btn-danger">Cancelar</a>
+
+								</div>
+							</div>
+					</div>
+
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- ============================================================== -->
+		<!-- End Container fluid  -->
+		<!-- ============================================================== -->
+	
+</body>
+</html>

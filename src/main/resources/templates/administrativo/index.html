@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+	layout:decorate="~{administrativo/fragments/layout}">
+<head>
+<meta charset="utf-8">
+<title>Loja Virtual - ADM</title>
+</head>
+<body>
+	<div class="container-fluid" layout:fragment="corpo">
+		<!-- ============================================================== -->
+		<!-- Sales Cards  -->
+		<!-- ============================================================== -->
+		<div class="row">
+
+			<div class="col-md-4">
+				<!-- Card -->
+				<div class="card"></div>
+				<!-- card -->
+				<div class="card-title">
+
+
+					<h1 class="badge badge-pill badge-primary">Ações</h1>
+				</div>
+				<!-- accoridan part -->
+				<div class="accordion" id="accordionExample">
+					<div class="card m-b-0">
+						<div class="card-header" id="headingOne">
+							<h5 class="mb-0">
+								<a data-toggle="collapse" data-target="#collapseOne"
+									aria-expanded="false" aria-controls="collapseOne"
+									class="collapsed"> <i aria-hidden="true"
+									class=" fas fa-edit"></i> <span>Cadastros</span>
+								</a>
+							</h5>
+						</div>
+						<div id="collapseOne" class="collapse"
+							aria-labelledby="headingOne" data-parent="#accordionExample"
+							style="">
+							<div class="card-body">
+								<ul class="list-style-none">
+
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addEstado">Estado</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addCidade">Cidade</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addFuncionario">Funcionário</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addPapel">Papéis</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addPermissao">Permissões
+												dos Funcionários</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addCupomDesconto">Cupom de Desconto</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addMarca">Marca</a>
+
+										</div>
+										
+										
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+										<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addProduto">Produto</a>
+
+										</div>
+										
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+
+											
+
+								</ul>
+
+
+
+							</div>
+						</div>
+					</div>
+					<div class="card m-b-0 border-top">
+						<div class="card-header" id="headingTwo">
+							<h5 class="mb-0">
+								<a class="collapsed" data-toggle="collapse"
+									data-target="#collapseTwo" aria-expanded="false"
+									aria-controls="collapseTwo"> <i aria-hidden="true"
+									class=" fas fa-th-list"></i> <span> Listas</span>
+								</a>
+							</h5>
+						</div>
+						<div id="collapseTwo" class="collapse"
+							aria-labelledby="headingTwo" data-parent="#accordionExample"
+							style="">
+							<div class="card-body">
+								<ul class="list-style-none">
+
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/estados">Estado</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/cidades">Cidade</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/funcionarios">Funcionário</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/papeis">Papéis</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/permissoes">Permissões
+												dos Funcionários</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/cupons">Cupom de Desconto</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/marcas">Marca</a>
+
+										</div>
+			
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/produtos">Produto</a>
+
+										</div>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addMarca">Marca</a>
+
+										</div>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/addMarca">Marca</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+
+
+
+								</ul>
+
+
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- toggle part -->
+
+				<!-- Tabs -->
+
+			</div>
+			<!-- Column -->
+
+			<!-- Column -->
+
+			<!-- Column -->
+
+			<!-- Column -->
+		</div>
+		<!-- ============================================================== -->
+		<!-- Sales chart -->
+		<!-- ============================================================== -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card-title">
+
+
+					<h1 class="badge badge-pill badge-secondary">Grafíco</h1>
+				</div>
+				<div class="card">
+
+					<div class="card-body">
+						<div class="d-md-flex align-items-center">
+							<div>
+								<h4 class="card-title">Analíse de Lucros</h4>
+								<h5 class="card-subtitle">Lucros do último mês</h5>
+							</div>
+						</div>
+						<div class="row">
+							<!-- column -->
+							<div class="col-lg-9">
+								<div class="flot-chart">
+									<div class="flot-chart-content" id="flot-line-chart"
+										style="padding: 0px; position: relative;">
+										<canvas class="flot-base"
+											style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 759.25px; height: 300px;"
+											width="759" height="300"></canvas>
+										<div class="flot-text"
+											style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+											<div class="flot-x-axis flot-x1-axis xAxis x1Axis"
+												style="position: absolute; inset: 0px;">
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 24px; text-align: center;"
+													class="flot-tick-label tickLabel">0</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 84px; text-align: center;"
+													class="flot-tick-label tickLabel">1</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 144px; text-align: center;"
+													class="flot-tick-label tickLabel">2</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 205px; text-align: center;"
+													class="flot-tick-label tickLabel">3</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 265px; text-align: center;"
+													class="flot-tick-label tickLabel">4</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 325px; text-align: center;"
+													class="flot-tick-label tickLabel">5</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 386px; text-align: center;"
+													class="flot-tick-label tickLabel">6</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 446px; text-align: center;"
+													class="flot-tick-label tickLabel">7</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 506px; text-align: center;"
+													class="flot-tick-label tickLabel">8</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 567px; text-align: center;"
+													class="flot-tick-label tickLabel">9</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 624px; text-align: center;"
+													class="flot-tick-label tickLabel">10</div>
+												<div
+													style="position: absolute; max-width: 58px; top: 283px; left: 684px; text-align: center;"
+													class="flot-tick-label tickLabel">11</div>
+											</div>
+											<div class="flot-y-axis flot-y1-axis yAxis y1Axis"
+												style="position: absolute; inset: 0px;">
+												<div
+													style="position: absolute; top: 246px; left: 0px; text-align: right;"
+													class="flot-tick-label tickLabel">-1.0</div>
+												<div
+													style="position: absolute; top: 190px; left: 0px; text-align: right;"
+													class="flot-tick-label tickLabel">-0.5</div>
+												<div
+													style="position: absolute; top: 134px; left: 5px; text-align: right;"
+													class="flot-tick-label tickLabel">0.0</div>
+												<div
+													style="position: absolute; top: 78px; left: 5px; text-align: right;"
+													class="flot-tick-label tickLabel">0.5</div>
+												<div
+													style="position: absolute; top: 23px; left: 5px; text-align: right;"
+													class="flot-tick-label tickLabel">1.0</div>
+											</div>
+										</div>
+										<canvas class="flot-overlay"
+											style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 759.25px; height: 300px;"
+											width="759" height="300"></canvas>
+										<div class="legend">
+											<div
+												style="position: absolute; width: 49.0333px; height: 39px; top: 14px; right: 13px; background-color: rgb(255, 255, 255); opacity: 0.85;">
+											</div>
+											<table
+												style="position: absolute; top: 14px; right: 13px;; font-size: smaller; color: #AFAFAF">
+												<tbody>
+													<tr>
+														<td class="legendColorBox"><div
+																style="border: 1px solid #ccc; padding: 1px">
+																<div
+																	style="width: 4px; height: 0; border: 5px solid rgb(238, 121, 81); overflow: hidden"></div>
+															</div></td>
+														<td class="legendLabel">-</td>
+													</tr>
+													<tr>
+														<td class="legendColorBox"><div
+																style="border: 1px solid #ccc; padding: 1px">
+																<div
+																	style="width: 4px; height: 0; border: 5px solid rgb(79, 185, 240); overflow: hidden"></div>
+															</div></td>
+														<td class="legendLabel">+</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- column -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ============================================================== -->
+		<!-- Sales chart -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Recent comment and chats -->
+		<!-- ============================================================== -->
+		<div class="row">
+			<!-- column -->
+
+			<!-- column -->
+
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- Recent comment and chats -->
+		<!-- ============================================================== -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- End Container fluid  -->
+	<!-- ============================================================== -->
+
+</body>
+</html>

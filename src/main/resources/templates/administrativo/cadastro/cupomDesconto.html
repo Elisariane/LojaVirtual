@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{administrativo/fragments/layout}">
+<head>
+<meta charset="utf-8">
+</head>
+			<!-- ============================================================== -->
+			<!-- Container fluid  -->
+			<!-- ============================================================== -->
+			<div class="container-fluid" layout:fragment="corpo">
+				<div class="col-sm-6">
+					<div class="card align-center">
+		<form class="form-horizontal " th:object="${desconto}" th:action="@{/administrativo/salvarCupomDesconto}" method="POST">
+
+							<div class="card-body text-center">
+								<h4 class="card-title">Cadastro de Cupom de Desconto</h4>
+
+								<div class="form-group row">
+									<div class="alert alert-danger"
+										th:if="${#fields.hasAnyErrors()}">
+										<div th:each="detailedError : ${#fields.detailedErrors()}">
+											<span th:text="${detailedError.message}"></span>
+										</div>
+									</div>
+									<label for="fname"
+										class="col-sm-3 text-right control-label col-form-label"></label>
+									<div class="col-sm-9">
+										<input type="hidden" class="form-control" id="id"
+											th:field="*{id}" readOlny="readonly" placeholder="id">
+									</div>
+								</div>
+		
+								
+								<div class="form-group row">
+									<label for="lname"
+										class="col-sm-3 text-right control-label col-form-label">Título do desconto
+										</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="lname"
+											th:field="*{nome}" placeholder="Informe o nome do desconto"
+											maxlength="50">
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="lname"
+										class="col-sm-3 text-right control-label col-form-label">Data de Criação do Desconto
+										</label>
+									<div class="col-sm-9">
+										<input type="date" class="form-control" id="lname"
+											th:field="*{dataCriacao}" placeholder="Data em que o de criação"
+											maxlength="50">
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="lname"
+										class="col-sm-3 text-right control-label col-form-label">Data de Validade 
+										</label>
+									<div class="col-sm-9">
+										<input type="date" class="form-control" id="lname"
+											th:field="*{dataValido}" placeholder="Data  de validade"
+											maxlength="50">
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label for="lname"
+										class="col-sm-3 text-right control-label col-form-label">Valor do desconto
+										</label>
+									<div class="col-sm-9">
+										<input type="number" class="form-control" id="lname"
+											th:field="*{desconto}" placeholder="Informe o desconto"
+											maxlength="50">
+									</div>
+								</div>
+								
+
+							</div>
+							<div class="card">
+
+								<div class="border-top"></div>
+							</div>
+							<div class="card"></div>
+							<div class="text-center">
+								<div class="card-body ">
+									<button  type="submit" class="btn btn-success btn-lg">Adicionar</button>
+									<a th:href="@{/administrativo/cupons}"
+										class="btn btn-lg btn-danger">Cancelar</a>
+
+								</div>
+							</div>
+						</form>
+					</div>
+
+
+				
+				</div>
+
+			</div>
+	
+		<!-- ============================================================== -->
+		<!-- End Container fluid  -->
+		<!-- ============================================================== -->
+
+</body>
+</html>
