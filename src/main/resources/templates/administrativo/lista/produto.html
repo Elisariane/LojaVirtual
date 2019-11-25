@@ -61,9 +61,9 @@
 												aria-label="Office: activate to sort column ascending">Nº em Estoque</th>
 												<th class="sorting" tabindex="0" aria-controls="zero_config"
 												rowspan="1" colspan="1" style="width: 103.75px;"
-												aria-label="Office: activate to sort column ascending">imagem</th>
+												aria-label="Office: activate to sort column ascending">Imagem</th>
 											<th class="sorting" tabindex="0" aria-controls="zero_config"
-												rowspan="1" colspan="1" style="width: 103.75px;"
+												rowspan="1" colspan="1" 
 												aria-label="Office: activate to sort column ascending">Ação</th>
 										</tr>
 
@@ -78,7 +78,7 @@
 											<td th:text="${prod.categoria}"></td>
 											<td th:text="${prod.valorVenda}"></td>
 											<td th:text="${prod.quantidadeEstoque}"></td>
-											<td th:text="${prod.nomeImagem}"></td>
+											<td > <img th:src="@{/administrativo/mostrarImagem/{imagem}(imagem=${prod.nomeImagem})}" width="100"></td>
 										
 											<td>
 												<div class="btn-group pull-right">
