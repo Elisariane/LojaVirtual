@@ -26,7 +26,6 @@ import com.lisa.LojaVirtual.Repository.ProdutoRepository;
 @Controller
 public class ProdutoController {
 
-	private static String caminhoImagens = "C:\\Users\\lisa\\Pictures\\ImagensLoja";
 
 	@Autowired
 	private ProdutoRepository repository;
@@ -47,16 +46,7 @@ public class ProdutoController {
 		return mv;
 	}
 
-	@GetMapping("/administrativo/produto/mostrarImagem/{imagem}")
-	@ResponseBody
-	public byte[] retornarImagem(@PathVariable("imagem") String imagem) throws IOException {
-		File imagemArquivo = new File(caminhoImagens + imagem);
-		if (imagem != null || imagem.trim().length() > 0) {
-			return Files.readAllBytes(imagemArquivo.toPath());
-		}
-		return null;
-	}
-
+	
 	@GetMapping("/administrativo/produto/editar/{id}")
 	public ModelAndView edit(@PathVariable("id") Long id) {
 		Optional<Produto> produto = repository.findById(id);
@@ -84,20 +74,7 @@ public class ProdutoController {
 
 		repository.saveAndFlush(produto);
 
-		try {
-			if (!arquivo.isEmpty()) {
-				byte[] bytes = arquivo.getBytes();
-				Path caminho = Paths
-						.get(caminhoImagens + String.valueOf(produto.getId()) + arquivo.getOriginalFilename());
-				Files.write(caminho, bytes);
-
-				produto.setNomeImagem(String.valueOf(produto.getId()) + arquivo.getOriginalFilename());
-				repository.saveAndFlush(produto);
-				
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 
 		return add(new Produto());
 	}

@@ -306,11 +306,13 @@
 
 						<!-- Product -->
 						<div class="product" th:each="prod : ${listaProduto}" >
-							<div class="product_image"><img th:src="@{/administrativo/produto/mostrarImagem/{imagem}(imagem=${prod.nomeImagem})}" class="img-fluid"></div>
+							<div class="product_image"><img th:src="@{/mostrarImagem/{imagem}(imagem=${prod.nomeImagem})}" class="img-fluid"></div>
 							<div class="product_extra product_new"><a href="categories.html">Novo</a></div>
 							<div class="product_content">
 								<div class="product_title" ><h3 th:text="${prod.nome}"></h3></div>
-								<div class="test-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viver ra velit venenatis fermentum luctus.</div>
+								<div class="col-sm-6 row">
+								<div class="test-muted "><spam th:text="${prod.descricao}"></spam></div>
+								</div>
 								<div class="product_price">R$<spam th:text="${prod.valorVenda}"></spam></div>
 								<div class="btn ">
 								
