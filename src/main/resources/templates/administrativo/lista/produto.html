@@ -78,12 +78,12 @@
 											<td th:text="${prod.categoria}"></td>
 											<td th:text="${prod.valorVenda}"></td>
 											<td th:text="${prod.quantidadeEstoque}"></td>
-											<td > <img th:src="@{/administrativo/mostrarImagem/{imagem}(imagem=${prod.nomeImagem})}" width="100"></td>
+											<td > <img th:src="@{/administrativo/produto/mostrarImagem/{imagem}(imagem=${prod.nomeImagem})}" width="100"></td>
 										
 											<td>
 												<div class="btn-group pull-right">
 													<a class="btn btn-md btn-primary"
-														th:href="@{/administrativo/editarProduto/{id}(id=${prod.id})}"><i
+														th:href="@{/administrativo/produto/editar/{id}(id=${prod.id})}"><i
 														class=" fas fa-pencil-alt"></i></a>
 													
 														
@@ -112,7 +112,7 @@
 																<button type="button" class="btn btn-outline pull-left"
 																	data-dismiss="modal">Fechar</button>
 																<a type="button" class="btn btn-outline"
-																	th:href="@{/administrativo/removerProduto/{id}(id=${prod.id})}"><i
+																	th:href="@{/administrativo/produto/remover/{id}(id=${prod.id})}"><i
 																	class="fa fa-check"></i>&nbsp;Sim</a>
 															</div>
 														</div>

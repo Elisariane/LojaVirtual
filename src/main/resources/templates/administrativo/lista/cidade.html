@@ -64,7 +64,7 @@
 														<td>
 															<div class="btn-group pull-right">
 																<a class="btn btn-md btn-primary"
-																	th:href="@{/administrativo/editarCidade/{id}(id=${cidade.id})}"><i class=" fas fa-pencil-alt"></i></a>
+																	th:href="@{/administrativo/cidade/editar/{id}(id=${cidade.id})}"><i class=" fas fa-pencil-alt"></i></a>
 																
 																	<a class="delete btn btn-md btn-danger" data-toggle="modal"
 													data-target="#modal-warning"
@@ -91,7 +91,7 @@
 																<button type="button" class="btn btn-outline pull-left"
 																	data-dismiss="modal">Fechar</button>
 																<a type="button" class="btn btn-outline"
-																	th:href="@{/administrativo/removerCidade/{id}(id=${cidade.id})}"><i
+																	th:href="@{/administrativo/cidade/remover/{id}(id=${cidade.id})}"><i
 																	class="fa fa-check"></i>&nbsp;Sim</a>
 															</div>
 														</div>

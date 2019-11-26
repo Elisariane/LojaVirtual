@@ -31,7 +31,7 @@ public class ProdutoController {
 	@Autowired
 	private ProdutoRepository repository;
 
-	@GetMapping("/administrativo/produtos")
+	@GetMapping("/administrativo/produto/listar")
 	public ModelAndView buscarTodos() {
 		ModelAndView mv = new ModelAndView("/administrativo/lista/produto");
 		mv.addObject("produtos", repository.findAll());
@@ -39,7 +39,7 @@ public class ProdutoController {
 		return mv;
 	}
 
-	@GetMapping("/administrativo/addProduto")
+	@GetMapping("/administrativo/produto/add")
 	public ModelAndView add(Produto produto) {
 		ModelAndView mv = new ModelAndView("/administrativo/cadastro/produto");
 		mv.addObject("produto", produto);
@@ -47,7 +47,7 @@ public class ProdutoController {
 		return mv;
 	}
 
-	@GetMapping("/administrativo/mostrarImagem/{imagem}")
+	@GetMapping("/administrativo/produto/mostrarImagem/{imagem}")
 	@ResponseBody
 	public byte[] retornarImagem(@PathVariable("imagem") String imagem) throws IOException {
 		File imagemArquivo = new File(caminhoImagens + imagem);
@@ -57,7 +57,7 @@ public class ProdutoController {
 		return null;
 	}
 
-	@GetMapping("/administrativo/editarProduto/{id}")
+	@GetMapping("/administrativo/produto/editar/{id}")
 	public ModelAndView edit(@PathVariable("id") Long id) {
 		Optional<Produto> produto = repository.findById(id);
 		Produto p = produto.get();
@@ -66,7 +66,7 @@ public class ProdutoController {
 
 	}
 
-	@GetMapping("/administrativo/removerProduto/{id}")
+	@GetMapping("/administrativo/produto/remover/{id}")
 	public ModelAndView delete(@PathVariable("id") Long id) {
 		Optional<Produto> produto = repository.findById(id);
 		Produto p = produto.get();
@@ -75,7 +75,7 @@ public class ProdutoController {
 		return buscarTodos();
 	}
 
-	@PostMapping("/administrativo/salvarProduto")
+	@PostMapping("/administrativo/produto/salvar")
 	public ModelAndView save(@Valid Produto produto, BindingResult result,
 			@RequestParam("file") MultipartFile arquivo) {
 		if (result.hasErrors()) {

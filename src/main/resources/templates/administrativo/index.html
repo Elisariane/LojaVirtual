@@ -43,7 +43,7 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addEstado">Estado</a>
+												href="/administrativo/estado/add">Estado</a>
 
 										</div>
 										<div class="ml-auto">
@@ -53,7 +53,7 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addCidade">Cidade</a>
+												href="/administrativo/cidade/add">Cidade</a>
 
 										</div>
 										<div class="ml-auto">
@@ -63,7 +63,7 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addFuncionario">Funcionário</a>
+												href="/administrativo/funcionario/add">Funcionário</a>
 
 										</div>
 										<div class="ml-auto">
@@ -73,7 +73,7 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addPapel">Papéis</a>
+												href="/administrativo/papel/add">Papéis</a>
 
 										</div>
 										<div class="ml-auto">
@@ -83,7 +83,7 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addPermissao">Permissões
+												href="/administrativo/permissao/add">Permissões
 												dos Funcionários</a>
 
 										</div>
@@ -94,18 +94,17 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addCupomDesconto">Cupom de Desconto</a>
+												href="/administrativo/cupom/add">Cupom de Desconto</a>
 
 										</div>
 										<div class="ml-auto">
 											<div class="tetx-right"></div>
 										</div></li>
-
-									<li class="d-flex no-block card-body"><i
+										<li class="d-flex no-block card-body"><i
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addMarca">Marca</a>
+												href="/administrativo/produto/add">Produto</a>
 
 										</div>
 										
@@ -117,15 +116,29 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addProduto">Produto</a>
+												href="/administrativo/produto/add">Entrada de Produto</a>
 
 										</div>
+										
 										
 										<div class="ml-auto">
 											<div class="tetx-right"></div>
 										</div></li>
+										
 
-											
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/marca/add">Marca</a>
+
+										</div>
+										
+										
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+																				
 
 								</ul>
 
@@ -149,22 +162,11 @@
 							style="">
 							<div class="card-body">
 								<ul class="list-style-none">
-
-									<li class="d-flex no-block card-body"><i
+<li class="d-flex no-block card-body"><i
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/estados">Estado</a>
-
-										</div>
-										<div class="ml-auto">
-											<div class="tetx-right"></div>
-										</div></li>
-									<li class="d-flex no-block card-body"><i
-										class="fa fa-check-circle w-30px m-t-5"></i>
-										<div>
-											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/cidades">Cidade</a>
+												href="/administrativo/estado/listar">Estado</a>
 
 										</div>
 										<div class="ml-auto">
@@ -174,7 +176,7 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/funcionarios">Funcionário</a>
+												href="/administrativo/cidade/listar">Cidade</a>
 
 										</div>
 										<div class="ml-auto">
@@ -184,7 +186,7 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/papeis">Papéis</a>
+												href="/administrativo/funcionario/listar">Funcionário</a>
 
 										</div>
 										<div class="ml-auto">
@@ -194,7 +196,17 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/permissoes">Permissões
+												href="/administrativo/papel/listar">Papéis</a>
+
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+									<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/permissao/listar">Permissões
 												dos Funcionários</a>
 
 										</div>
@@ -205,36 +217,47 @@
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/cupons">Cupom de Desconto</a>
+												href="/administrativo/cupom/listar">Cupom de Desconto</a>
 
 										</div>
 										<div class="ml-auto">
 											<div class="tetx-right"></div>
 										</div></li>
+										<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/produto/listar">Produto</a>
+
+										</div>
+										
+										
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+										<li class="d-flex no-block card-body"><i
+										class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a class="m-b-0 font-medium p-0"
+												href="/administrativo/produto/listar">Entrada de Produto</a>
+
+										</div>
+										
+										
+										<div class="ml-auto">
+											<div class="tetx-right"></div>
+										</div></li>
+										
 
 									<li class="d-flex no-block card-body"><i
 										class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/marcas">Marca</a>
+												href="/administrativo/marca/listar">Marca</a>
 
 										</div>
-			
-										<div>
-											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/produtos">Produto</a>
-
-										</div>
-										<div>
-											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addMarca">Marca</a>
-
-										</div>
-										<div>
-											<a class="m-b-0 font-medium p-0"
-												href="/administrativo/addMarca">Marca</a>
-
-										</div>
+										
+										
 										<div class="ml-auto">
 											<div class="tetx-right"></div>
 										</div></li>

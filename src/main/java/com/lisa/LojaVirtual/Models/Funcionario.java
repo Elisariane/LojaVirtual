@@ -21,6 +21,21 @@ public class Funcionario {
 	@ManyToOne
 	private Cidade cidade;
 	private Double salario;
+	private String email;
+	private String senha;
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	public Long getId() {
 		return id;
 	}

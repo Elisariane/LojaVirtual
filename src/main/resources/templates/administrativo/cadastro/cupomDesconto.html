@@ -9,7 +9,7 @@
 			<div class="container-fluid" layout:fragment="corpo">
 				<div class="col-sm-6">
 					<div class="card align-center">
-		<form class="form-horizontal " th:object="${desconto}" th:action="@{/administrativo/salvarCupomDesconto}" method="POST">
+		<form class="form-horizontal " th:object="${desconto}" th:action="@{/administrativo/cupom/salvar}" method="POST">
 
 							<div class="card-body text-center">
 								<h4 class="card-title">Cadastro de Cupom de Desconto</h4>
@@ -84,7 +84,7 @@
 							<div class="text-center">
 								<div class="card-body ">
 									<button  type="submit" class="btn btn-success btn-lg">Adicionar</button>
-									<a th:href="@{/administrativo/cupons}"
+									<a th:href="@{/administrativo/cupom/listar}"
 										class="btn btn-lg btn-danger">Cancelar</a>
 
 								</div>

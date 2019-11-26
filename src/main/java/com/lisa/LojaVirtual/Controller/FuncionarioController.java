@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +31,7 @@ public class FuncionarioController {
 	@Autowired
 	private FuncionarioRepository repository;
 	
-	@GetMapping("/administrativo/funcionarios")
+	@GetMapping("/administrativo/funcionario/listar")
 	public ModelAndView buscarTodos() {
 		ModelAndView mv = new ModelAndView("/administrativo/lista/funcionario");
 		mv.addObject("funcionarios", repository.findAll());
@@ -40,7 +41,7 @@ public class FuncionarioController {
 
 	
 	
-	@GetMapping("/administrativo/addFuncionario")
+	@GetMapping("/administrativo/funcionario/add")
 	public ModelAndView add(Funcionario funcionario) {
 		ModelAndView mv = new ModelAndView("/administrativo/cadastro/funcionario");
 		mv.addObject("funcionario", funcionario);
@@ -52,7 +53,7 @@ public class FuncionarioController {
 	}
 	
 	
-	@GetMapping("/administrativo/editarFuncionario/{id}")
+	@GetMapping("/administrativo/funcionario/editar/{id}")
 	public ModelAndView edit(@PathVariable("id") Long id) {
 		Optional<Funcionario> funcionario = repository.findById(id);
 		Funcionario f = funcionario.get();
@@ -62,7 +63,7 @@ public class FuncionarioController {
 	}
 
 	
-	@GetMapping("/administrativo/removerFuncionario/{id}")
+	@GetMapping("/administrativo/funcionario/remover/{id}")
 	public ModelAndView delete(@PathVariable("id") Long id) {
 		Optional<Funcionario> funcionario = repository.findById(id);
 		Funcionario f = funcionario.get();
@@ -72,12 +73,12 @@ public class FuncionarioController {
 		return buscarTodos();
 	}
 	
-	@PostMapping("/administrativo/salvarFuncionario")
+	@PostMapping("/administrativo/funcionario/salvar")
 	public ModelAndView save(@Valid Funcionario funcionario, BindingResult result) {
 		if(result.hasErrors()) {
 			return add(funcionario);
 		}
-		
+		funcionario.setSenha(new BCryptPasswordEncoder().encode(funcionario.getSenha()));
 		repository.saveAndFlush(funcionario);
 		
 		return buscarTodos();

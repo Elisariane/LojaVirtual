@@ -10,7 +10,7 @@
 				<div class="col-sm-6">
 					<div class="card align-center">
 						<form class="form-horizontal " th:object="${permissao}"
-							th:action="@{/administrativo/salvarPermissao}" method="POST">
+							th:action="@{/administrativo/permissao/salvar}" method="POST">
 
 							<div class="card-body text-center">
 								<h4 class="card-title">Cadastro de Permissão ao Funcionário</h4>
@@ -74,7 +74,7 @@
 							<div class="text-center">
 								<div class="card-body ">
 									<button  type="submit" class="btn btn-success btn-lg">Adicionar</button>
-									<a th:href="@{/administrativo/permissoes}"
+									<a th:href="@{/administrativo/permissao/listar}"
 										class="btn btn-lg btn-danger">Cancelar</a>
 
 								</div>

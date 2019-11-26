@@ -9,7 +9,7 @@
 			<div class="container-fluid" layout:fragment="corpo">
 				<div class="col-sm-6">
 					<div class="card align-center">
-		<form class="form-horizontal " th:object="${papel}" th:action="@{/administrativo/salvarPapel}" method="POST">
+		<form class="form-horizontal " th:object="${papel}" th:action="@{/administrativo/papel/salvar}" method="POST">
 
 							<div class="card-body text-center">
 								<h4 class="card-title">Cadastro de Papel</h4>
@@ -49,7 +49,7 @@
 							<div class="text-center">
 								<div class="card-body ">
 									<button  type="submit" class="btn btn-success btn-lg">Adicionar</button>
-									<a th:href="@{/administrativo/papeis}"
+									<a th:href="@{/administrativo/papel/listar}"
 										class="btn btn-lg btn-danger">Cancelar</a>
 
 								</div>

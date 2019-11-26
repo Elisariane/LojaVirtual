@@ -24,7 +24,7 @@ import com.lisa.LojaVirtual.Repository.CupomDescontoRepositoy;
 public class CupomDescontoController {
 	@Autowired
 	private CupomDescontoRepositoy repository;
-	@GetMapping("/administrativo/cupons")
+	@GetMapping("/administrativo/cupom/listar")
 	public ModelAndView buscarTodos() {
 		ModelAndView mv = new ModelAndView("/administrativo/lista/cupomDesconto");
 		mv.addObject("descontos", repository.findAll());
@@ -34,7 +34,7 @@ public class CupomDescontoController {
 
 	
 	
-	@GetMapping("/administrativo/addCupomDesconto")
+	@GetMapping("/administrativo/cupom/add")
 	public ModelAndView add(CupomDesconto desconto) {
 		ModelAndView mv = new ModelAndView("/administrativo/cadastro/cupomDesconto");
 		mv.addObject("desconto", desconto);
@@ -43,7 +43,7 @@ public class CupomDescontoController {
 	}
 	
 	
-	@GetMapping("/administrativo/editarCupomDesconto/{id}")
+	@GetMapping("/administrativo/cupom/editar/{id}")
 	public ModelAndView edit(@PathVariable("id") Long id) {
 		Optional<CupomDesconto> desconto = repository.findById(id);
 		CupomDesconto d = desconto.get();
@@ -53,7 +53,7 @@ public class CupomDescontoController {
 	}
 
 	
-	@GetMapping("/administrativo/removerCupomDesconto/{id}")
+	@GetMapping("/administrativo/cupom/remover/{id}")
 	public ModelAndView delete(@PathVariable("id") Long id) {
 		Optional<CupomDesconto> desconto = repository.findById(id);
 		CupomDesconto d = desconto.get();
@@ -64,7 +64,7 @@ public class CupomDescontoController {
 		return buscarTodos();
 	}
 	
-	@PostMapping("/administrativo/salvarCupomDesconto")
+	@PostMapping("/administrativo/cupom/salvar")
 	public ModelAndView save(@Valid CupomDesconto desconto, BindingResult result) {
 		if(result.hasErrors()) {
 			return add(desconto);

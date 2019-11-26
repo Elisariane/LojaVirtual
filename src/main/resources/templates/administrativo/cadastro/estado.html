@@ -10,7 +10,7 @@
 				<div class="col-sm-6">
 					<div class="card align-center">
 						<form class="form-horizontal " th:object="${estado}"
-							th:action="@{/administrativo/salvarEstado}" method="POST">
+							th:action="@{/administrativo/estado/salvar}" method="POST">
 
 							<div class="card-body text-center">
 								<h4 class="card-title">Cadastro de Estado</h4>
@@ -58,7 +58,7 @@
 							<div class="text-center">
 								<div class="card-body ">
 									<button  type="submit" class="btn btn-success btn-lg">Adicionar</button>
-									<a th:href="@{/administrativo/estados}"
+									<a th:href="@{/administrativo/estado/listar}"
 										class="btn btn-lg btn-danger">Cancelar</a>
 
 								</div>

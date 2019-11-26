@@ -35,7 +35,7 @@ public class EntradaProdutoController {
 	@Autowired
 	private ProdutoRepository produtoRepositorio;
 
-	@GetMapping("/administrativo/addEntradaProduto")
+	@GetMapping("/administrativo/entrada/add")
 	public ModelAndView add(EntradaProduto entrada, EntradaItens entradaItens) {
 		ModelAndView mv = new ModelAndView("administrativo/cadastro/entradaProduto");
 		mv.addObject("entrada", entrada);
@@ -48,7 +48,7 @@ public class EntradaProdutoController {
 
 
 
-	@PostMapping("/administrativo/salvarEntradaProduto")
+	@PostMapping("/administrativo/entrada/salvar")
 	public ModelAndView salvar(String acao, EntradaProduto entrada, EntradaItens entradaItens) {
 
 		if (acao.equals("itens")) {

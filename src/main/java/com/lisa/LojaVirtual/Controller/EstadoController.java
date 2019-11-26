@@ -21,7 +21,7 @@ public class EstadoController {
 	@Autowired
 	private EstadoRepository repository;
 	
-	@GetMapping("/administrativo/estados")
+	@GetMapping("/administrativo/estado/listar")
 	public ModelAndView buscarTodos() {
 		ModelAndView mv = new ModelAndView("/administrativo/lista/estado");
 		mv.addObject("estados", repository.findAll());
@@ -40,7 +40,7 @@ public class EstadoController {
 //	
 	
 	
-	@GetMapping("/administrativo/addEstado")
+	@GetMapping("/administrativo/estado/add")
 	public ModelAndView add(Estado estado) {
 		ModelAndView mv = new ModelAndView("/administrativo/cadastro/estado");
 		mv.addObject("estado", estado);
@@ -49,7 +49,7 @@ public class EstadoController {
 	}
 	
 	
-	@GetMapping("/administrativo/editarEstado/{id}")
+	@GetMapping("/administrativo/estado/editar/{id}")
 	public ModelAndView edit(@PathVariable("id") Long id) {
 		Optional<Estado> estado = repository.findById(id);
 		Estado e = estado.get();
@@ -59,7 +59,7 @@ public class EstadoController {
 	}
 
 	
-	@GetMapping("/administrativo/removerEstado/{id}")
+	@GetMapping("/administrativo/estado/remover/{id}")
 	public ModelAndView delete(@PathVariable("id") Long id) {
 		Optional<Estado> estado = repository.findById(id);
 		Estado e = estado.get();
@@ -69,7 +69,7 @@ public class EstadoController {
 		return buscarTodos();
 	}
 	
-	@PostMapping("/administrativo/salvarEstado")
+	@PostMapping("/administrativo/estado/salvar")
 	public ModelAndView save(@Valid Estado estado, BindingResult result) {
 		if(result.hasErrors()) {
 			return add(estado);
