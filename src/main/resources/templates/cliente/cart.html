@@ -39,131 +39,99 @@ xmlns:layout="http://www.w3.org/1999/xhtml"
 
 	<!-- Cart Info -->
 
-	<div class="cart_info">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col">
-					<!-- Column Titles -->
-					<div class="cart_info_columns clearfix">
-						<div class="cart_info_col cart_info_col_product">Produto</div>
-						<div class="cart_info_col cart_info_col_price">Preço</div>
-						<div class="cart_info_col cart_info_col_quantity">Quantidade</div>
-						<div class="cart_info_col cart_info_col_total">Total</div>
+	<
+		<div class="row">
+
+			<div class="col-12">
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col"></th>
+								<th scope="col">Produto</th>
+								<th scope="col">Estoque</th>
+								<th scope="col" class="text-center">Quantidade</th>
+								<th scope="col" class="text-right">Valor Unitário</th>
+								<th scope="col" class="text-right">Valor Total</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="item : ${listaItens}">
+								<td><img  th:src="@{/mostrarImagem/{imagem}(imagem=${item.produto.nomeImagem})}"  />
+								</td>
+								<td th:text="${item.produto.nome}"></td>
+								<td>Em estoque</td>
+								<td><span th:text="${item.quantidade}"></span> &nbsp;&nbsp;
+
+									<a class="btn btn-sm btn-success"
+									th:href="@{/alterarQuantidade/{id}/{acao}(id=${item.produto.id},acao=${1})}"
+									role="button"><i class="fa fa-plus"></i></a> &nbsp;&nbsp; <a
+									class="btn btn-sm btn-success"
+									th:href="@{/alterarQuantidade/{id}/{acao}(id=${item.produto.id},acao=${0})}"
+									role="button"><i class="fa fa-minus"></i></a></td>
+							
+								<td class="text-right" th:text="${item.valorUnitario}"></td>
+								<td class="text-right" th:text="${item.valorTotal}"></td>
+								<td class="text-right"><a class="btn btn-sm btn-danger"
+									th:href="@{/removerProduto/{id}(id=${item.produto.id})}"
+									role="button"><i class="fa fa-trash"></i></a></td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>Sub-Total</td>
+								<td class="text-right"><span th:text="${compra.valorTotal}"></span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>Frete</td>
+								<td class="text-right">0,00</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><strong>Total</strong></td>
+								<td class="text-right"><strong><spam
+										th:text="${compra.valorTotal}"></strong></spam></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+			<div class="col mb-12">
+				<div class="row">
+					<div class="col-sm-12 col-md-6 text-right">
+						<button class="btn btn-block btn-light">Continue
+							Comprando</button>
+					</div>
+					<div class="col-sm-12 col-md-6 text-right">
+					<a class="btn btn-lg btn-block btn-dark text-uppercase"
+									th:href="finalizar"
+									role="button">Finalizar a Compra</a>
+				
 					</div>
 				</div>
 			</div>
-			<div class="row cart_items_row">
-				<div class="col">
 
-					<!-- Cart Item -->
-					<div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-						<!-- Name -->
-						<div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
-							<div class="cart_item_image">
-								<div><img src="images/cart_1.jpg" alt=""></div>
-							</div>
-							<div class="cart_item_name_container">
-								<div class="cart_item_name"><a href="#" ></a></div>
-								<div class="cart_item_edit"><a href="#">Edit Product</a></div>
-							</div>
-						</div>
-						<!-- Price -->
-						<div class="cart_item_price">$790.90</div>
-						<!-- Quantity -->
-						<div class="cart_item_quantity">
-							<div class="product_quantity_container">
-								<div class="product_quantity clearfix">
-									<span>Qty</span>
-									<input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-									<div class="quantity_buttons">
-										<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-										<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Total -->
-						<div class="cart_item_total">$790.90</div>
-					</div>
 
-				</div>
-			</div>
-			<div class="row row_cart_buttons">
-				<div class="col">
-					<div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
-						<div class="button continue_shopping_button"><a href="/">Continuar Comprando</a></div>
-						<div class="cart_buttons_right ml-lg-auto">
-							<div class="button clear_cart_button"><a href="#">Limpar Carrinho</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row row_extra">
-				<div class="col-lg-4">
-					
-					<!-- Delivery -->
-					<div class="delivery">
-						<div class="section_title">Shipping method</div>
-						<div class="section_subtitle">Select the one you want</div>
-						<div class="delivery_options">
-							<label class="delivery_option clearfix">Next day delivery
-								<input type="radio" name="radio">
-								<span class="checkmark"></span>
-								<span class="delivery_price">$4.99</span>
-							</label>
-							<label class="delivery_option clearfix">Standard delivery
-								<input type="radio" name="radio">
-								<span class="checkmark"></span>
-								<span class="delivery_price">$1.99</span>
-							</label>
-							<label class="delivery_option clearfix">Personal pickup
-								<input type="radio" checked="checked" name="radio">
-								<span class="checkmark"></span>
-								<span class="delivery_price">Free</span>
-							</label>
-						</div>
-					</div>
+		</div>
+		<!-- /.row -->
+				<br/><br/><br/><br/>						<hr>
 
-					<!-- Coupon Code -->
-					<div class="coupon">
-						<div class="section_title">Cupom de desconto</div>
-						<div class="section_subtitle">Insira um cupom de desconto</div>
-						<div class="coupon_form_container">
-							<form action="#" id="coupon_form" class="coupon_form">
-								<input type="text" class="coupon_input" required="required">
-								<button class="button coupon_button"><span>Aplicar</span></button>
-							</form>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-6 offset-lg-2">
-					<div class="cart_total">
-						<div class="section_title">Cart total</div>
-						<div class="section_subtitle">Final info</div>
-						<div class="cart_total_container">
-							<ul>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div class="cart_total_title">Subtotal</div>
-									<div class="cart_total_value ml-auto">R$</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div class="cart_total_title">Frete</div>
-									<div class="cart_total_value ml-auto"></div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div class="cart_total_title">Total</div>
-									<div class="cart_total_value ml-auto">R$</div>
-								</li>
-							</ul>
-						</div>
-						<div class="button checkout_button"><a href="#">Confirmar compra</a></div>
-					</div>
-				</div>
-			</div>
-		</div>		
-	</div>
-
+						
 	
 </div>
 <br/>
